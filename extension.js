@@ -7,7 +7,17 @@
     icon: "/static/icon.png", // Category icon
     color: "#2C3E50", // Category color (recommend some blocks color)
     blocks: [ // Blocks in Category
-        "ds18b20_read"
+    {
+        xml: `
+            <block type="ds18b20_read">
+                <value name="pin">
+                    <shadow type="math_number">
+                        <field name="NUM">2</field>
+                    </shadow>
+                </value>
+            </block>
+        `
+    },
     ],
     supportArduinoPlatform: true,
     depends: [ // Arduino library
